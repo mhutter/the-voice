@@ -4,4 +4,5 @@
 
 - [ ] Keywords
 - [ ] Google Webmaster Tools
+- [ ] Deployment
 - [ ] Analytics?
