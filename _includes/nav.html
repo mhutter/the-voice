@@ -1,0 +1,13 @@
+<nav>
+  <ul class="nav">
+  {% assign sorted = site.pages | sort: "order" %}
+  {% for p in sorted %}{%if p.title %}
+    <li>
+      <a {% if page.url == p.url %}class="current"{% endif %}
+          href="{{ p.url | prepend: site.baseurl }}">
+        {{ p.title }}
+      </a>
+    </li>
+  {% endif %}{% endfor %}
+  </ul>
+</nav>

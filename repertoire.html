@@ -1,0 +1,20 @@
+---
+title: Repertoire
+order: 3
+---
+<table>
+  <thead>
+    <tr>
+      <th>Interpret</th>
+      <th>Songtitel</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for song in site.data.repertoire %}
+    <tr>
+      <td>{{ song.artist }}</td>
+      <td>{{ song.title }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="{{ '/css/style.css' | prepend: site.baseurl }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
+  {% seo %}
+</head>
+<body>
+  <header id="page-header">
+    <a href="{{ '/' | prepend: site.baseurl}}">
+      <img src="{{ '/img/logo_the_voice.jpg' | prepend: site.baseurl }}" alt="The Voice">
+    </a>
+    {% include nav.html %}
+  </header>
+
+{{ content }}
+
+</body>
+</html>

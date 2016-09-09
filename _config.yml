@@ -1,0 +1,33 @@
+title: The Voice
+
+description: >
+  Wir sind vier Cousinen, die ihre Leidenschaft zur Musik teilen. Musik ist für
+  uns Passion, Energiequelle, die Möglichkeit abzuschalten, Balsam für die
+  Seele, Freude, Spass und gibt uns ein Gefühl der Verbundenheit.
+baseurl: ""
+url: https://the-voice.cc
+
+# Defaults
+defaults:
+  - scope:
+      path: "" # anything
+    values:
+      layout: default
+
+# Build settings
+permalink: pretty
+sass:
+  style: compressed
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - vendor
+  - README.md
+include:
+  - .htaccess

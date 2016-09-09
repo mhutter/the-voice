@@ -1,0 +1,32 @@
+---
+---
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: url('/img/brautstrauss.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+body > * + * {
+  padding-top: 10em;
+}
+
+a, a:visited, {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover { font-size: 1.1em; }
+
+header {
+  text-align: center;
+}
+
+.member {
+  width: 25%;
+  float: left;
+}
