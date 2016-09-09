@@ -1,32 +1,98 @@
 ---
 ---
+@import 'https://fonts.googleapis.com/css?family=Droid+Serif';
+
 * {
   margin: 0;
   padding: 0;
 }
 
+html, body { min-height: 100%; }
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
   background-image: url('/img/brautstrauss.jpg');
   background-position: bottom center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 214px 80px;
+  padding-bottom: 80px;
+}
+body, input {
+  font-family: "Droid Serif", Georgia, "Times New Roman", serif;
+  font-size: calc(1em + 1vw);
+  font-style: italic;
+  line-height: 1.5;
 }
 
-body > * + * {
-  padding-top: 10em;
+body * {
+  margin-top: 1.5rem;
+}
+.sqs-overlay { margin-top: 0; }
+
+body > * {
+  background-color: rgba(255, 255, 255, .7);
+  padding: 1rem;
 }
 
 a, a:visited, {
   text-decoration: none;
+  font-style: normal;
   color: #000000;
 }
 a:hover { font-size: 1.1em; }
 
+img {
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+td, th {
+  text-align: left;
+}
+
 header {
+  margin-top: 0;
   text-align: center;
 }
 
-.member {
-  width: 25%;
-  float: left;
+.btn {
+  display: inline-block;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
 }
+.btn:hover {
+  font-size: 1em;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+@media (min-width: 728px) {
+  body {
+    font-size: 16px;
+    background-size: auto;
+  }
+  .hero {
+    text-align: center;
+    max-width: 470px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 900px) {
+  body {
+    font-size: 20px;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@import "nav", "members";

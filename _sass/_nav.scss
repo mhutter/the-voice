@@ -1,0 +1,23 @@
+nav {
+  font-size: 1.2em;
+  display: flex;
+  flex-flow: row wrap;
+}
+nav a {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: bottom;
+  flex-basis: 190px;
+  flex-grow: 1;
+}
+@media (min-width: 728px) {
+  nav a {
+    flex-basis: 150px
+  }
+}
+@media (min-width: 900px) {
+  nav a {
+    flex-basis: 190px
+  }
+}

@@ -1,0 +1,23 @@
+.members {
+  display: flex;
+  flex-flow: row wrap;
+
+  > * {
+    flex-basis: 244px;
+    flex-grow: 1;
+    padding: 1em;
+    margin: 0;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  img {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: .25rem;
+    display: inline-block
+  }
+}
