@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTPS} =off
+RewriteRule ^ https://the-voice.cc%{REQUEST_URI} [QSA,L,R=301]
