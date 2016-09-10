@@ -2,7 +2,7 @@
 
 ## To do
 
-- [ ] Keywords
+- [ ] ~~Keywords~~
 - [ ] Google Webmaster Tools
-- [ ] Deployment
+- [x] Deployment
 - [ ] Analytics?
