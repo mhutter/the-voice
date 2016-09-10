@@ -3,6 +3,6 @@
 ## To do
 
 - [ ] ~~Keywords~~
-- [ ] Google Webmaster Tools
+- [x] Google Webmaster Tools
 - [x] Deployment
 - [ ] Analytics?
