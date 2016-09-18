@@ -1,5 +1,12 @@
 Header set Strict-Transport-Security "max-age=15552000"
 
 RewriteEngine On
+
+RewriteRule ^ueber_uns.html$     /           [R=301,N]
+RewriteRule ^unser_Angebot.html$ /angebot    [R=301,N]
+RewriteRule ^Mitglieder.html$    /mitglieder [R=301,N]
+RewriteRule ^Repertoire.html$    /repertoire [R=301,N]
+RewriteRule ^Kontakt.html$       /kontakt    [R=301,N]
+
 RewriteCond %{HTTPS} =off
-RewriteRule ^ https://the-voice.cc%{REQUEST_URI} [QSA,L,R=301]
+RewriteRule ^ https://the-voice.cc%{REQUEST_URI} [L,R=301]
