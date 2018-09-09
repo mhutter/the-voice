@@ -7,6 +7,7 @@ order: 3
     <tr>
       <th>Interpret</th>
       <th>Songtitel</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@ order: 3
     <tr>
       <td>{{ song.artist }}</td>
       <td>{{ song.title }}</td>
+      <td>{% if song.link %}<a href="{{ song.link }}">Song anhören</a>{% endif %}</td>
     </tr>
   {% endfor %}
   </tbody>
