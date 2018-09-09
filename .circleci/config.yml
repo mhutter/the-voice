@@ -1,0 +1,79 @@
+---
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5
+    environment:
+      - NOKOGIRI_USE_SYSTEM_LIBRARIES: 'true'
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: Install Dependencies
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run:
+          name: Build site
+          command: |
+            rm -rf _site
+            bundle exec jekyll build
+      - run:
+          name: Check site
+          command: |
+            bundle exec htmlproofer \
+              ./_site \
+              --url-ignore 'mailto:4b4w1cm4'
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - _site
+            - .circleci/known_hosts
+
+  deploy:
+    docker:
+      - image: alpine
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache \
+              rsync ca-certificates openssh-client
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Configure SSH
+          command: |
+            mkdir -p ~/.ssh && \
+            cp .circleci/known_hosts ~/.ssh/known_hosts
+      - run:
+          name: Deploy site
+          command: |
+            rsync -aPz --delete \
+              _site/ \
+              "${SSH_USER}@${SSH_HOST}:public_html/the-voice.cc/"
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
