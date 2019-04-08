@@ -15,11 +15,11 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
       - run:
           name: Install Dependencies
-          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+          command: |
+            gem install bundler && \
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run:
           name: Build site
           command: |
