@@ -19,5 +19,5 @@ jobs:
           build_only: true
       - uses: chabad360/htmlproofer@master
         with:
-          directory: _site
+          directory: build
           arguments: --url-ignore mailto:4b4w1cm4
