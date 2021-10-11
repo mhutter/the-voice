@@ -1,9 +1,9 @@
-# [the-voice.cc](https://the-voice.cc)
-[![CircleCI](https://circleci.com/gh/mhutter/the-voice.svg?style=svg)](https://circleci.com/gh/mhutter/the-voice)
+# the-voice.cc
 
-## To do
+https://the-voice.cc
 
-- [ ] ~~Keywords~~
-- [x] Google Webmaster Tools
-- [x] Deployment
-- [ ] Analytics?
+
+## Deployment
+
+- Push to the default branch
+- Done!
