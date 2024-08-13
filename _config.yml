@@ -1,6 +1,6 @@
 title: The Voice
 
-description: 'The Voice: Virginia Stillhard, Iris Bürgi und Nadja Büsser.'
+description: "The Voice: Virginia Stillhard, Iris Bürgi und Nadja Büsser."
 author: Virginia Stillhard, Iris Bürgi, Nadja Büsser
 logo: /img/logo_the_voice.jpg
 
@@ -31,5 +31,6 @@ exclude:
   - Rakefile
   - vendor
   - README.md
+  - flake.*
 include:
   - .htaccess
